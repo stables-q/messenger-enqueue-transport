@@ -267,8 +267,8 @@ class QueueInteropTransport implements TransportInterface
     {
         $context = $this->contextManager->context();
         $destination = $this->getDestination(null);
-        $queue = $context->createQueue($destination['queue']);
+        $topic = $context->createTopic($destination['topic']);
 
-        return $context->createConsumer($queue);
+        return $context->createConsumer($topic);
     }
 }
